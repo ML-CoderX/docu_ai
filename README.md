@@ -24,3 +24,22 @@ Frontend -	Streamlit, HTML/CSS, Spline 3D
 Backend -	Flask, scikit-learn, NumPy
 AI/ML -	Disease prediction ML model + Gemini Pro (Google AI)
 Deployment Ready	- Yes (Localhost / Cloud-compatible)
+
+
+### ☁️ Deploy on Render
+
+This project includes a `render.yaml` blueprint that deploys:
+
+- `docu-ai-backend` (Flask API)
+- `docu-ai-frontend` (Streamlit UI)
+
+Steps:
+1. Push this repository to GitHub.
+2. In Render, create a new **Blueprint** and select this repo.
+3. Set `GEMINI_API_KEY` for the backend service in Render environment variables.
+4. After the backend URL is created, update `BACKEND_URL` (if needed) for the frontend service.
+
+Render will use:
+- Build command: `pip install -r ../requirements.txt`
+- Backend start: `gunicorn app:app --bind 0.0.0.0:$PORT`
+- Frontend start: `streamlit run App.py --server.port $PORT --server.address 0.0.0.0`
