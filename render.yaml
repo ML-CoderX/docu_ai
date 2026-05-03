@@ -2,9 +2,8 @@ services:
   - type: web
     name: docu-ai-backend
     runtime: python
-    rootDir: backend
-    buildCommand: pip install -r ../requirements.txt
-    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn backend.app:app --bind 0.0.0.0:$PORT
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
@@ -14,9 +13,8 @@ services:
   - type: web
     name: docu-ai-frontend
     runtime: python
-    rootDir: frontend
-    buildCommand: pip install -r ../requirements.txt
-    startCommand: streamlit run App.py --server.port $PORT --server.address 0.0.0.0
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run frontend/App.py --server.port $PORT --server.address 0.0.0.0
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9

@@ -40,6 +40,14 @@ Steps:
 4. After the backend URL is created, update `BACKEND_URL` (if needed) for the frontend service.
 
 Render will use:
-- Build command: `pip install -r ../requirements.txt`
-- Backend start: `gunicorn app:app --bind 0.0.0.0:$PORT`
-- Frontend start: `streamlit run App.py --server.port $PORT --server.address 0.0.0.0`
+- Build command: `pip install -r requirements.txt`
+- Backend start: `gunicorn backend.app:app --bind 0.0.0.0:$PORT`
+- Frontend start: `streamlit run frontend/App.py --server.port $PORT --server.address 0.0.0.0`
+
+
+### Alternative frontend hosting
+
+You can absolutely host the frontend somewhere else (for example Streamlit Community Cloud) and keep only the Flask API on Render. In that case:
+- Deploy only `docu-ai-backend` on Render.
+- Set `BACKEND_URL` in your frontend host to the Render backend URL.
+- Keep CORS enabled in backend (already enabled in this project).
