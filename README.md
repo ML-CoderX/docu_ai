@@ -1,4 +1,3 @@
-# DOCU AI
 ##🧠 AI Clinical Assistance
 
 An intelligent medical support tool that helps doctors make informed decisions by combining Machine Learning predictions and Generative AI suggestions — all through a beautiful, interactive UI.
@@ -51,3 +50,11 @@ You can absolutely host the frontend somewhere else (for example Streamlit Commu
 - Deploy only `docu-ai-backend` on Render.
 - Set `BACKEND_URL` in your frontend host to the Render backend URL.
 - Keep CORS enabled in backend (already enabled in this project).
+
+
+### API quick check
+
+After deploy, open:
+- `GET /` for a basic API status message
+- `GET /health` for a health check
+- `POST /assist` for predictions
