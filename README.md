@@ -41,7 +41,7 @@ Steps:
 
 Render will use:
 - Build command: `pip install -r ../requirements.txt`
-- Backend start: `gunicorn wsgi:application --bind 0.0.0.0:$PORT`
+- Backend start: `gunicorn app:app --bind 0.0.0.0:$PORT`
 - Frontend start: `streamlit run App.py --server.port $PORT --server.address 0.0.0.0`
 
 
