@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+import os
 
 st.set_page_config(page_title="AI Doctor Assistant", layout="wide")
 
@@ -160,7 +161,7 @@ with col2:
             with st.spinner("Consulting AI Clinical Assistant..."):
                 try:
                     response = requests.post(
-                        "http://127.0.0.1:5000/assist",
+                        f"{os.getenv('BACKEND_URL', 'http://127.0.0.1:5000')}/assist",
                         json={"symptoms": selected_symptoms},
                         timeout=60
                     )
