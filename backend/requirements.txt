@@ -1,1 +1,16 @@
-
+request
+jsonify
+CORS
+pickle
+flask
+flask-cors
+numpy
+RandomForestClassifier
+train_test_split
+accuracy_score
+scikit-learn
+streamlit
+requests
+google-generativeai
+python-dotenv
+gunicorn
