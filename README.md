@@ -40,9 +40,9 @@ Steps:
 4. After the backend URL is created, update `BACKEND_URL` (if needed) for the frontend service.
 
 Render will use:
-- Build command: `pip install -r requirements.txt`
-- Backend start: `gunicorn backend.app:app --bind 0.0.0.0:$PORT`
-- Frontend start: `streamlit run frontend/App.py --server.port $PORT --server.address 0.0.0.0`
+- Build command: `pip install -r ../requirements.txt`
+- Backend start: `gunicorn wsgi:application --bind 0.0.0.0:$PORT`
+- Frontend start: `streamlit run App.py --server.port $PORT --server.address 0.0.0.0`
 
 
 ### Alternative frontend hosting
